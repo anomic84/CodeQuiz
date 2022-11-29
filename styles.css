@@ -1,23 +1,128 @@
-*,
-*::before,
-*::after {
+/* ---------------------GLOBAL--------------------- */
+
+* {
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
-    font: gotham rounded;
+    font-family: 'Courier New', Courier, monospace;
+    /* border: 1px solid yellowgreen; */
+    color: white;
 }
 
 :root {
-    --hue-neutral: 200;
-    --hue-wrong: 0;
-    --hue-right: 145;
+    --hue-neutral: rgb(82, 79, 79);
+    --hue-wrong: rgb(255, 0, 0);
+    --hue-right: rgb(33, 150, 23);
 }
 
 body {
-    --hue: var(--hue-neutral);
-    padding: 0;
-    margin: 0;
-    display: flex;
-    height: 100vh;
-    width: 100vw;
-    justify-content: center;
-    align-items: center;
+    background-color: var(--hue-neutral);
+    overflow: hidden;
 }
+
+p {
+    font-size: 1.3em;
+}
+
+h1,
+h2 {
+    color: rgb(255, 249, 64);
+    text-align: center;
+}
+
+button {
+    outline: none;
+    background-color: black;
+    font-size: 1.3em;
+}
+
+li {
+    list-style: none;
+}
+
+/* -------------------OUTER DIV------------------- */
+
+.out-div {
+    padding: 10px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+/* -------------------TOP BAR------------------- */
+
+
+.top-bar p {
+    float: right;
+
+}
+
+/* -------------------INNER DIV------------------- */
+
+.inner-div {
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* -------------------START BUTTON------------------- */
+
+.intro,
+main {
+    margin-bottom: 30vh;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: var(--hue-neutral);
+    display: none;
+}
+
+.intro {
+    display: none;
+}
+
+.intro p {
+    text-align: center;
+}
+
+.intro button {
+    display: block;
+    margin: 0 auto;
+}
+
+/* -------------------QUIZ------------------- */
+
+main {
+    display: block;
+
+}
+
+/* -------------------QUESTIONS------------------- */
+
+.questions {
+    display: none;
+}
+
+
+/* -------------------FINISH------------------- */
+
+.finish {
+    display: none;
+}
+
+/* -------------------HIGHSCCORES------------------- */
+
+.highscores {
+    display: block;
+}
+
+.highscores ol {
+    
+    max-height: 200px;
+}
+
+.high

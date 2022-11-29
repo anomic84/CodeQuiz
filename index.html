@@ -5,21 +5,75 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Code Quiz</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <!-- everything in one div (i guess body might work) -->
+    <!-- Main box -->
+    <div class="out-div">
+
+        <!-- header div -->
+        <div class="top-bar">
+            <button>View Highscores</button>
+            <p>Timer: 00:00</p>
+        </div>
+
+        <!-- inside box -->
+        <div class="inner-div">
+
+            <!-- PHASE 1 -->
+            <!-- start button  -->
+            <header class="intro">
+                <h1>Welcome to the quiz</h1>
+                <p>Press start when ready!</p>
+                <button>Start</button>
+            </header>
+
+            <!-- quiz -->
+            <main>
+                <!-- PHASE 2 -->
+                <section class="questions">
+                    <h2>Question</h2>
+                    <ul>
+                        <li><button>Answer 1</button></li>
+                        <li><button>Answer 2</button></li>
+                        <li><button>Answer 3</button></li>
+                        <li><button>Answer 4</button></li>
+                    </ul>
+                </section>
+
+                <!-- PHASE 3 -->
+                <section class="finish">
+                    <h2>All Done!</h2>
+                    <p>Your Score: 00</p>
+                    <div>
+                        <label for="">Enter Initials</label>
+                        <input type="text">
+                        <button>Submit</button>
+                    </div>
+                </section>
+
+                <!-- HIGHSCORES -->
+                <section class="highscores">
+                    <h2>Highscores</h2>
+                    <ol>
+                        <li>WH - 22</li>
+                        <li>SC - 20</li>
+                        <li>LI - 21</li>
+                        <li>GJ - 15</li>
+                    </ol>
+                    <button>Go Back</button>
+                    <button>Clear Highscores</button>
+                </section>
 
 
-    <!-- Make opening div with menu to high scores,etc -->
+            </main>
+
+        </div>
 
 
-    <!-- centered div with "start quiz button linked to JS to change to four buttons when click element" -->
-
-
-    <!-- div 4 buttons goes here? or in JS?  -->
+    </div>
 </body>
 
 </html>
