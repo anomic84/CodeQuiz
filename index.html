@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Quiz</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 
 <body>
@@ -15,7 +16,7 @@
 
         <!-- header div -->
         <div class="top-bar">
-            <button>View Highscores</button>
+            <button class="nav-button">View Highscores</button>
             <p>Timer: 00:00</p>
         </div>
 
@@ -24,18 +25,18 @@
 
             <!-- PHASE 1 -->
             <!-- start button  -->
-            <header class="intro">
+            <header id="start-button" class="intro">
                 <h1>Welcome to the quiz</h1>
                 <p>Press start when ready!</p>
-                <button>Start</button>
+                <button class="nav-button">Start</button>
             </header>
 
             <!-- quiz -->
-            <main>
+            <main id="main-container">
                 <!-- PHASE 2 -->
-                <section class="questions">
+                <section id="questions-section" class="questions" class="hide">
                     <h2>Question</h2>
-                    <ul>
+                    <ul id="answer-buttons">
                         <li><button>Answer 1</button></li>
                         <li><button>Answer 2</button></li>
                         <li><button>Answer 3</button></li>
@@ -44,7 +45,7 @@
                 </section>
 
                 <!-- PHASE 3 -->
-                <section class="finish">
+                <section class="finish" class="hide">
                     <h2>All Done!</h2>
                     <p>Your Score: 00</p>
                     <div>
@@ -74,6 +75,8 @@
 
 
     </div>
+
 </body>
+
 
 </html>

@@ -1,3 +1,14 @@
+const startButton = document.getElementById('start-button')
+const questionContainerElement = document.getElementById('questions-section')
+const mainContainerElement = document.getElementById('main-container')
+
+startButton.addEventListener('click', startQuiz)
+
+function startQuiz() {
+    startButton.classList.add('hide')
+    mainContainerElement.classList.add('show')
+    questionContainerElement.classList.add('show')
+}
 // Start the quiz function
 
 // Start timer
