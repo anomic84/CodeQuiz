@@ -6,8 +6,8 @@ startButton.addEventListener('click', startQuiz)
 
 function startQuiz() {
     startButton.classList.add('hide')
-    mainContainerElement.classList.add('show')
-    questionContainerElement.classList.add('show')
+    mainContainerElement.classList.remove('hide')
+    questionContainerElement.classList.remove('hide')
 }
 // Start the quiz function
 
