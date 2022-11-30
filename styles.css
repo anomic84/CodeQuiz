@@ -18,6 +18,7 @@
     --hue-nav: rgb(166, 46, 46);
     --hue-nav-hover: rgb(160, 72, 72);
     --hue-abtn: rgb(120, 0, 167);
+    --hue-abtn-hover: rgb(152, 13, 207);
 }
 
 body {
@@ -46,17 +47,16 @@ button {
     /* font-size: 1.3em; */
 }
 
-li {
+/* li {
     list-style: none;
-}
+} */
 
 /* ------------------ UTES ------------------*/
 
 .nav-button {
     background-color: var(--hue-nav);
     box-shadow: 0 0 5px black;
-    transition: background-color 0.25s;
-
+    transition: 0.25s;
 }
 
 .nav-button:hover {
@@ -147,6 +147,10 @@ main {
     background-color: var(--hue-abtn);
     border: 3px solid var(--);
     box-shadow: 0 0 5px black;
+}
+
+.abtn:hover {
+    background-color: var(--hue-abtn-hover);
 }
 
 /* -------------------FINISH------------------- */
