@@ -12,17 +12,17 @@
 
 
 :root {
-    --hue-neutral: rgb(82, 79, 79);
-    --hue-wrong: rgb(255, 0, 0);
-    --hue-right: rgb(33, 150, 23);
-    --hue-nav: rgb(166, 46, 46);
-    --hue-nav-hover: rgb(160, 72, 72);
-    --hue-abtn: rgb(120, 0, 167);
-    --hue-abtn-hover: rgb(152, 13, 207);
+    --neutral: rgb(82, 79, 79);
+    --wrong: rgb(255, 0, 0);
+    --right: rgb(33, 150, 23);
+    --nav: rgb(166, 46, 46);
+    --nav-hover: rgb(160, 72, 72);
+    --abtn: rgb(120, 0, 167);
+    --abtn-hover: rgb(152, 13, 207);
 }
 
 body {
-    background-color: var(--hue-neutral);
+    background-color: var(--neutral);
     height: 100vh;
     overflow: hidden;
 }
@@ -42,7 +42,7 @@ button {
     /* outline: none; */
     /* background-color: purple; */
     Padding: 15px 30px;
-    border: 2px solid var(--hue-neutral);
+    border: 2px solid var(--neutral);
     border-radius: 10px;
     /* font-size: 1.3em; */
 }
@@ -53,14 +53,22 @@ button {
 
 /* ------------------ UTES ------------------*/
 
+body.correct {
+    background-color: var(--correct);
+}
+
+body.wrong {
+    background-color: var(--wrong);
+}
+
 .nav-button {
-    background-color: var(--hue-nav);
+    background-color: var(--nav);
     box-shadow: 0 0 5px black;
     transition: 0.25s;
 }
 
 .nav-button:hover {
-    background-color: var(--hue-nav-hover)
+    background-color: var(--nav-hover)
 }
 
 /* -------------------OUTER DIV------------------- */
@@ -100,7 +108,7 @@ main {
     margin-bottom: 30vh;
     margin-left: 10%;
     margin-right: 10%;
-    background-color: var(--hue-neutral);
+    background-color: var(--neutral);
     display: none;
     border-radius: 5px;
 
@@ -144,13 +152,13 @@ main {
 }
 
 .abtn {
-    background-color: var(--hue-abtn);
+    background-color: var(--abtn);
     border: 3px solid var(--);
     box-shadow: 0 0 5px black;
 }
 
 .abtn:hover {
-    background-color: var(--hue-abtn-hover);
+    background-color: var(--abtn-hover);
 }
 
 /* -------------------FINISH------------------- */

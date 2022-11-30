@@ -1,98 +1,111 @@
-const startButton = document.getElementById('start-button')
-const questionContainerElement = document.getElementById('questions-section')
-const mainContainerElement = document.getElementById('main-container')
-const questionElement = document.getElementById('questiond')
-const answerButtonsElement = document.getElementById('answer-button')
 
-let shuffledQuestions, currentQuestionIndex
+//buttons
 
-startButton.addEventListener('click', startQuiz)
-
-// Start the quiz function
-function startQuiz() {
-    startButton.classList.add('hide')
-    shuffledQuestions = questions.sort(() => Math.random() - .5)
-    currentQuestionIndex = 0
-    // change from intro to questions
-    mainContainerElement.classList.remove('hide')
-    questionContainerElement.classList.remove('hide')
-    // setNextQuestion()
-}
+//questions/answers element
 
 
-// Start timer
+//High Score Array
 
 
-// next question function
-function setNextQuestion() {
-    resetState()
-    showQuestion(shuffledQuestions[currentQuestionIndex])
-}
+ //assign array details for questions 
 
-function showQuestion(question) {
-    questionElement.innerText = question.question
-    question.answers.forEach(answer => {
-        const button = document.createElement('button')
-        button.innerText = answer.text
-        button.classList.add('abtn')
-        if (answer.correct) {
-            button.dataset.correct = answer.correct
-        }
-        button.addEventListener('click', selectAnswer)
-        answerButtonsElement.appendChild(button)
-    })
-}
 
-function resetState() {
-    clearStatusClass(document.body)
-    nextButton.classList.add('hide')
-    while (answerButtonsElement.firstChild) {
-        answerButtonsElement.removeChild(answerButtonsElement.firstChild)
-    }
-}
 
-function selectAnswer(e) {
-    const selectedButton = e.target
-    const correct = selectedButton.dataset.correct
-    setStatusClass(document.body, correct)
-    Array.from(answerButtonsElement.children).forEach(button => {
-        setStatusClass(button, button.dataset.correct)
-    })
-    if (shuffledQuestions.length > currentQuestionIndex + 1) {
-        nextButton.classList.remove('hide')
-    } else {
-        startButton.innerText = 'Restart'
-        startButton.classList.remove('hide')
-    }
+
+
+// The array of questions for our quiz game.
+var questions = [
+  { q: 'Arrays in Javascript can be used to store __________.', 
+    a: '4. all of the above', 
+    choices: [{choice: '1. numbers'}, {choice: '2. booleans'}, {choice: '3. strings'}, {choice: '4. all of the above'}]
+  },
+  { q: 'Inside which HTML element do we put the javascript?', 
+    a: '3. <script>', 
+    choices: [{choice: '1. <h1>'}, {choice: '2. <js>'}, {choice: '3. <script>'}, {choice: '4. <head>'}]
+  },
+  { q: 'In the code -- setinterval(time(),1000) -- what is time()?', 
+    a: '1. callback function', 
+    choices: [{choice: '1. callback function'}, {choice: '2. undefined'}, {choice: '3. variable'}, {choice: '4. all of the above'}]
+  },
+  { q: 'What syntax would call a function?', 
+    a: '4. function()', 
+    choices: [{choice: '1. var function'}, {choice: '2. function'}, {choice: '3. call function'}, {choice: '4. function()'}]
+  },
+  { q: 'When did javascript first appear?', 
+    a: '1. 1995', 
+    choices: [{choice: '1. 1995'}, {choice: '2. Roaring twenties'}, {choice: '3. 2005'}, {choice: '4. 2000'}]
+  },
+  { q: 'What does DOM stand for?', 
+    a: '2. Document Object Model', 
+    choices: [{choice: '1. Do Overnight Modules'}, {choice: '2. Document Object Model'}, {choice: '3. Divas Obviously Model'}, {choice: '4. Do Oo Mo'}]
+  },
+  { q: 'What is getItem commonly used for?', 
+    a: '2. local storage', 
+    choices: [{choice: '1. adding drama'}, {choice: '2. local storage'}, {choice: '3. online shopping'}, {choice: '4. naming a variable'}]
+  },
+];
+
+  //if go back button is hit on high score page
+
+
+//every second, check if game-over is true, or if there is time left. Start time at 30. 
+
+
+var startGame = function() {
+  //add classes to show/hide start and quiz screen
+  
+  //Shuffle the questions so they show in random order
 
 }
 
-
-const questions = [
-    {
-        question: 'What is 2 + 2?',
-        answers: [
-            { text: '4', correct: true },
-            { text: '22', correct: false },
-            { text: '14', correct: false },
-            { text: 'bloo', correct: false },
-        ]
-    }
-]
-// answer right funtion (maybe inside each questions function)
-// answer wrong funtion (maybe inside each questions function)
-
-// last question function to change to finish
+//set next question for quiz
 
 
-
-// enter highscore function
-//Go back function
-//
+//remove answer buttons
 
 
+//display question information (including answer buttons)
 
-//highscore button function at intro
+//display correct! on screen
+
+//display wrong! on screen
 
 
+//check if answer is correct    
 
+
+  //go to next question, check if there is more questions
+
+
+  //Display total score screen at end of game
+
+//create high score values
+
+
+//push and sort scores
+
+
+//clear visibile list to resort
+
+//create elements in order of high scores
+
+//save high score
+
+
+//load values/ called on page load
+
+
+//display high score screen from link or when intiials entered
+
+//clears high scores
+
+  
+//on start click, start game
+
+//on submit button -- enter or click
+
+//when view high-scores is clicked
+
+//Go back button
+
+//clear scores button
