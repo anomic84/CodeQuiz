@@ -84,7 +84,7 @@ body.wrong {
 /* -------------------TOP BAR------------------- */
 
 
-.top-bar p {
+.top-bar h4 {
     float: right;
 
 }
@@ -141,7 +141,7 @@ main {
     display: none;
 }
 
-.answer-buttons {
+.btn-grid {
     display: grid;
     align-items: center;
     justify-content: center;
@@ -179,11 +179,11 @@ main {
 }
 
 
-/* -------------------HIDE FUNCTION------------------- */
+/* -------------------HIDE/Show FUNCTION------------------- */
 .hide {
     display: none;
 }
 
-/* .show {
+.show {
     display: block;
-} */
+}
