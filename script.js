@@ -138,24 +138,85 @@ function displayQuestion(index) {
         answerbutton.innerText = index.choices[i].choice
         answerbutton.classList.add('btn')
         answerbutton.classList.add('abtn')
-        // answerbutton.addEventListener("click", answerCheck)
+        answerbutton.addEventListener("click", answerCheck)
         answerButtonsEl.appendChild(answerbutton)
     }
 };
-//display correct! on screen
-
-//display wrong! on screen
 
 
 //check if answer is correct    
+function answerCheck(event) {
+    var selectedanswer = event.target
+    if (arrayShuffledQuestions[QuestionIndex].a === selectedanswer.innerText) {
+        answerCorrect()
+        score = score + 7
+    }
 
+    else {
+        answerWrong()
+        score = score - 1;
+        timeleft = timeleft - 3;
+    };
 
-//go to next question, check if there is more questions
+    //go to next question, check if there is more questions
+    QuestionIndex++
+    if (arrayShuffledQuestions.length > QuestionIndex + 1) {
+        setQuestion()
+    }
+    else {
+        gameover = "true";
+        showScore();
+    }
+}
+
+//display correct! on screen
+function answerCorrect() {
+    if (correctEl.className = "hide") {
+        correctEl.classList.remove("hide")
+        correctEl.classList.add("banner")
+        wrongEl.classList.remove("banner")
+        wrongEl.classList.add("hide")
+    }
+}
+//display wrong! on screen
+function answerWrong() {
+    if (wrongEl.className = "hide") {
+        wrongEl.classList.remove("hide")
+        wrongEl.classList.add("banner")
+        correctEl.classList.remove("banner")
+        correctEl.classList.add("hide")
+    }
+}
 
 
 //Display total score screen at end of game
+function showScore() {
+    containerQuestionEl.classList.remove("show");
+    containerQuestionEl.classList.add("hide");
+    containerFinishEl.classList.remove("hide");
+    containerFinishEl.classList.add("show");
+
+    var scoreDisplay = document.createElement("p");
+    scoreDisplay.innerText = ("Your final score is " + score + "!");
+    containerScoreEl.appendChild(scoreDisplay);
+}
 
 //create high score values
+var createHighScore = function (event) {
+    event.preventDefault()
+    var initials = document.querySelector("#initials").value;
+    if (!initials) {
+        alert("Enter your intials!");
+        return;
+    }
+
+    formInitials.reset();
+
+    var HighScore = {
+        initials: initials,
+        score: score
+    }
+}
 
 
 //push and sort scores
@@ -174,5 +235,3 @@ function displayQuestion(index) {
 //display high score screen from link or when intiials entered
 
 //clears high scores
-
-
