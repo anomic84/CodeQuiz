@@ -16,7 +16,7 @@
 
         <!-- header div -->
         <div class="top-bar">
-            <button class="nav-button">View Highscores</button>
+            <button id="view-high-scores" class="nav-button">View Highscores</button>
             <h4 class="timer">Time: <span id="timer"></span></h4>
         </div>
 
@@ -41,13 +41,14 @@
 
             <!-- PHASE 3 -->
             <section id="finish" class="hide">
-                <h2>All Done!</h2>
-                <p>Your Score: 00</p>
-                <div>
-                    <p>Enter Initials</p>
+                <div id="your-score">
+                    <h2>All Done!</h2>
+                </div>
+                <form id="initials-form" class="initials">
+                    <p>Enter Initials:</p>
                     <input type="text" name="initials" id="initials" class="text-input" />
                     <button class="nav-button" id="sumbit-score" type="submit">Submit</button>
-                </div>
+                </form>
                 <div>
                     <button class="nav-button" id="back-button">Go back</button>
                     <button class="nav-button" id="clear-high-scores">Clear high scores</button>
@@ -55,7 +56,7 @@
             </section>
 
             <!-- HIGHSCORES -->
-            <section id="hssection" class="highscores">
+            <section id="hssection" class="highscores" class="hide">
                 <div>
                     <h2>Highscores</h2>
                     <ol id="high-score-list" class="score-list"></ol>

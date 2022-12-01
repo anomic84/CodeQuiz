@@ -1,6 +1,7 @@
 var containerStartEl = document.getElementById('start-section')
 var containerQuestionEl = document.getElementById('questions-section')
 var containerFinishEl = document.getElementById('finish')
+var containerScoreEl = document.getElementById("your-score")
 var containerHighScoresEl = document.getElementById('hssection')
 // 
 var formInitials = document.getElementById("initials-form")
@@ -25,13 +26,13 @@ timerEl.innerText = 0;
 //on start click, start game
 buttonStart.addEventListener("click", startGame)
 //on submit button -- enter or click
-
+formInitials.addEventListener("submit", createHighScore)
 //when view high-scores is clicked
-
+ViewHighScoreEl.addEventListener("click", displayHighScores)
 //Go back button
-
+buttonGoBack.addEventListener("click", renderStartPage)
 //clear scores button
-
+buttonClear.addEventListener("click", clearScores)
 
 
 //High Score Array
@@ -85,7 +86,28 @@ var questions = [
 
 
 //if go back button is hit on high score page
+function renderStartPage() {
+    containerFinishEl.classList.remove("show")
+    containerFinishEl.classList.add("hide")
+    containerHighScoresEl.classList.remove("show")
+    containerHighScoresEl.classList.add("hide")
+    containerStartEl.classList.remove("hide")
+    containerStartEl.classList.add("show")
+    containerScoreEl.removeChild(containerScoreEl.lastChild)
+    QuestionIndex = 0
+    gameover = ""
+    timerEl.textContent = 0
+    score = 0
 
+    if (correctEl.className = "show") {
+        correctEl.classList.remove("show");
+        correctEl.classList.add("hide")
+    }
+    if (wrongEl.className = "show") {
+        wrongEl.classList.remove("show");
+        wrongEl.classList.add("hide");
+    }
+}
 
 //every second, check if game-over is true, or if there is time left. Start time at 30. 
 function setTime() {
@@ -206,7 +228,7 @@ function showScore() {
 }
 
 //create high score values
-var createHighScore = function (event) {
+function createHighScore(event) {
     event.preventDefault()
     var initials = document.querySelector("#initials").value;
     if (!initials) {
@@ -220,30 +242,99 @@ var createHighScore = function (event) {
         initials: initials,
         score: score
     }
-}
 
 
-//push and sort scores
-HighScores.push(HighScore);
-HighScores.sort((a, b) => { return b.score - a.score });
+    //push and sort scores
+    HighScores.push(HighScore);
+    HighScores.sort((a, b) => { return b.score - a.score });
 
-//clear visibile list to resort
-while (listHighScoreEl.firstChild) {
-    listHighScoreEl.removeChild(listHighScoreEl.firstChild)
-    //create elements in order of high scores
-    for (var i = 0; i < HighScores.length; i++) {
-        var highscoreEl = document.createElement("li");
-        highscoreEl.ClassName = "high-score";
-        highscoreEl.innerHTML = HighScores[i].initials + " - " + HighScores[i].score;
-        listHighScoreEl.appendChild(highscoreEl);
+    //clear visibile list to resort
+    while (listHighScoreEl.firstChild) {
+        listHighScoreEl.removeChild(listHighScoreEl.firstChild)
+        //create elements in order of high scores
+        for (var i = 0; i < HighScores.length; i++) {
+            var highscoreEl = document.createElement("li");
+            highscoreEl.ClassName = "high-score";
+            highscoreEl.innerHTML = HighScores[i].initials + " - " + HighScores[i].score;
+            listHighScoreEl.appendChild(highscoreEl);
+        }
     }
-}
-//save high score
+    saveHighScore();
+    displayHighScores();
 
+}
+
+//save high score
+function saveHighScore() {
+    localStorage.setItem("HighScores", JSON.stringify(HighScores))
+
+}
 
 //load values/ called on page load
+function loadHighScore() {
+    var LoadedHighScores = localStorage.getItem("HighScores")
+    if (!LoadedHighScores) {
+        return false;
+    }
+
+    LoadedHighScores = JSON.parse(LoadedHighScores);
+    LoadedHighScores.sort((a, b) => { return b.score - a.score })
 
 
-//display high score screen from link or when intiials entered
+    for (var i = 0; i < LoadedHighScores.length; i++) {
+        var highscoreEl = document.createElement("li");
+        highscoreEl.ClassName = "high-score";
+        highscoreEl.innerText = LoadedHighScores[i].initials + " - " + LoadedHighScores[i].score;
+        listHighScoreEl.appendChild(highscoreEl);
 
+        HighScores.push(LoadedHighScores[i]);
+
+    }
+}
+
+//display high score screen from link or when intials entered
+function displayHighScores() {
+
+    containerHighScoresEl.classList.remove("hide");
+    containerHighScoresEl.classList.add("show");
+    gameover = "true"
+
+    if (containerFinishEl.className = "show") {
+        containerFinishEl.classList.remove("show");
+        containerFinishEl.classList.add("hide");
+    }
+    if (containerStartEl.className = "show") {
+        containerStartEl.classList.remove("show");
+        containerStartEl.classList.add("hide");
+    }
+
+    if (containerQuestionEl.className = "show") {
+        containerQuestionEl.classList.remove("show");
+        containerQuestionEl.classList.add("hide");
+    }
+
+    if (correctEl.className = "show") {
+        correctEl.classList.remove("show");
+        correctEl.classList.add("hide");
+    }
+
+    if (wrongEl.className = "show") {
+        wrongEl.classList.remove("show");
+        wrongEl.classList.add("hide");
+    }
+
+}
 //clears high scores
+function clearScores() {
+    HighScores = [];
+
+    while (listHighScoreEl.firstChild) {
+        listHighScoreEl.removeChild(listHighScoreEl.firstChild);
+    }
+
+    localStorage.clear(HighScores);
+
+}
+
+loadHighScore()
+

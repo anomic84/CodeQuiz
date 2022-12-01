@@ -171,7 +171,7 @@ main {
 }
 
 .text-input {
-
+    color: var(--neutral);
     border-width: 1px;
     padding: 5px;
     width: 35%;
@@ -190,11 +190,14 @@ main {
     display: none;
 }
 
-.highscores ol {
+/* .highscores ol {
 
     max-height: 200px;
-}
+} */
 
+#high-score {
+    text-align: left;
+}
 
 /* -------------------HIDE/Show FUNCTION------------------- */
 .hide {
