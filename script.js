@@ -13,7 +13,7 @@ var wrongEl = document.getElementById('wrong')
 //buttons
 var buttonStart = document.getElementById('start-button')
 var buttonGoBack = document.getElementById('back-button')
-var buttonClear = document.getElementById("clear-high-scores")
+var buttonClear = document.getElementById('clear-high-scores')
 //questions/answers element
 var questionsEL = document.getElementById('question')
 var answerButtonsEl = document.getElementById("answer-buttons")
@@ -258,15 +258,10 @@ function createHighScore(event) {
             highscoreEl.innerHTML = HighScores[i].initials + " - " + HighScores[i].score;
             listHighScoreEl.appendChild(highscoreEl);
         }
+        break;
     }
-    saveHighScore();
-    displayHighScores();
-
-}
-
-//save high score
-function saveHighScore() {
     localStorage.setItem("HighScores", JSON.stringify(HighScores))
+    displayHighScores();
 
 }
 
@@ -325,7 +320,9 @@ function displayHighScores() {
 
 }
 //clears high scores
-function clearScores() {
+function clearScores(event) {
+    event.preventDefault()
+    console.log("Its runnnig")
     HighScores = [];
 
     while (listHighScoreEl.firstChild) {

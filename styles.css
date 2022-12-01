@@ -190,10 +190,21 @@ main {
     display: none;
 }
 
-/* .highscores ol {
+ol {
+    list-style-type: number;
+}
 
-    max-height: 200px;
-} */
+li:nth-child(odd) {
+    background-color: rgba(228, 151, 164, 0.5);
+    ;
+}
+
+
+li {
+    font-size: 4.0vw;
+    list-style-position: inside;
+}
+
 
 #high-score {
     text-align: left;
