@@ -1,7 +1,7 @@
 var containerStartEl = document.getElementById('start-section')
 var containerQuestionEl = document.getElementById('questions-section')
 var containerFinishEl = document.getElementById('finish')
-var containerHighScoresEl = document.getElementById('finish')
+var containerHighScoresEl = document.getElementById('hssection')
 
 var correctEl = document.getElementById('correct')
 var wrongEl = document.getElementById('wrong')
@@ -11,12 +11,24 @@ var buttonGoBack = document.getElementById('back-button')
 var buttonClear = document.getElementById("clear-high-scores")
 //questions/answers element
 var questionsEL = document.getElementById('question')
-var answerbuttonsEl = document.getElementById("answer-buttons")
+var answerButtonsEl = document.getElementById("answer-buttons")
 var timerEl = document.querySelector("#timer");
 var score = 0;
 var timeleft;
 var gameover;
 timerEl.innerText = 0;
+
+//on start click, start game
+buttonStart.addEventListener("click", startGame)
+//on submit button -- enter or click
+
+//when view high-scores is clicked
+
+//Go back button
+
+//clear scores button
+
+
 
 //High Score Array
 
@@ -112,14 +124,14 @@ function setQuestion() {
 }
 
 //remove answer buttons
-var resetAnswers = function () {
-    while (answerbuttonsEl.firstChild) {
-        answerbuttonsEl.removeChild(answerbuttonsEl.firstChild)
+function resetAnswers() {
+    while (answerButtonsEl.firstChild) {
+        answerButtonsEl.removeChild(answerButtonsEl.firstChild)
     };
 };
 
 //display question information (including answer buttons)
-var displayQuestion = function (index) {
+function displayQuestion(index) {
     questionsEL.innerText = index.q
     for (var i = 0; i < index.choices.length; i++) {
         var answerbutton = document.createElement('button')
@@ -127,7 +139,7 @@ var displayQuestion = function (index) {
         answerbutton.classList.add('btn')
         answerbutton.classList.add('answerbtn')
         // answerbutton.addEventListener("click", answerCheck)
-        answerbuttonsEl.appendChild(answerbutton)
+        answerButtonsEl.appendChild(answerbutton)
     }
 };
 //display correct! on screen
@@ -164,12 +176,3 @@ var displayQuestion = function (index) {
 //clears high scores
 
 
-//on start click, start game
-buttonStart.addEventListener("click", startGame)
-//on submit button -- enter or click
-
-//when view high-scores is clicked
-
-//Go back button
-
-//clear scores button
