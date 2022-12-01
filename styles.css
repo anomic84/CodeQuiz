@@ -19,6 +19,7 @@
     --nav-hover: rgb(160, 72, 72);
     --abtn: rgb(120, 0, 167);
     --abtn-hover: rgb(152, 13, 207);
+
 }
 
 body {
@@ -68,7 +69,8 @@ body.wrong {
 }
 
 .nav-button:hover {
-    background-color: var(--nav-hover)
+    background-color: var(--nav-hover);
+    box-shadow: 0 0.4rem 1.4rem 0 var(--nav-hover);
 }
 
 /* -------------------OUTER DIV------------------- */
@@ -159,6 +161,7 @@ main {
 
 .abtn:hover {
     background-color: var(--abtn-hover);
+    box-shadow: 0 0.4rem 1.4rem 0 var(--abtn-hover);
 }
 
 /* -------------------FINISH------------------- */
