@@ -2,7 +2,11 @@ var containerStartEl = document.getElementById('start-section')
 var containerQuestionEl = document.getElementById('questions-section')
 var containerFinishEl = document.getElementById('finish')
 var containerHighScoresEl = document.getElementById('hssection')
-
+// 
+var formInitials = document.getElementById("initials-form")
+var ViewHighScoreEl = document.getElementById("view-high-scores")
+var listHighScoreEl = document.getElementById("high-score-list")
+// 
 var correctEl = document.getElementById('correct')
 var wrongEl = document.getElementById('wrong')
 //buttons
@@ -31,7 +35,7 @@ buttonStart.addEventListener("click", startGame)
 
 
 //High Score Array
-
+var HighScores = [];
 
 //assign array details for questions 
 var arrayShuffledQuestions
@@ -220,12 +224,20 @@ var createHighScore = function (event) {
 
 
 //push and sort scores
-
+HighScores.push(HighScore);
+HighScores.sort((a, b) => { return b.score - a.score });
 
 //clear visibile list to resort
-
-//create elements in order of high scores
-
+while (listHighScoreEl.firstChild) {
+    listHighScoreEl.removeChild(listHighScoreEl.firstChild)
+    //create elements in order of high scores
+    for (var i = 0; i < HighScores.length; i++) {
+        var highscoreEl = document.createElement("li");
+        highscoreEl.ClassName = "high-score";
+        highscoreEl.innerHTML = HighScores[i].initials + " - " + HighScores[i].score;
+        listHighScoreEl.appendChild(highscoreEl);
+    }
+}
 //save high score
 
 
