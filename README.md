@@ -12,7 +12,7 @@ JavaScript Code Quiz
 A JavaScript Quiz with multiple choice questions, a timer, and high scores!
 
 ## Website
-[JavaScript Quiz Game]()
+[JavaScript Quiz Game](https://anomic84.github.io/CodeQuiz/)
 
 ## Screenshots
 ![Question Screenshot](./assets/CodeQuiz.png)
