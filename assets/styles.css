@@ -30,6 +30,7 @@ body {
 
 p {
     font-size: 1.3em;
+    align-self: center;
 }
 
 h1,
@@ -101,6 +102,7 @@ body.wrong {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border-radius: 50px;
 }
 
 /* -------------------START BUTTON------------------- */
@@ -110,11 +112,22 @@ main {
     margin-bottom: 30vh;
     margin-left: 10%;
     margin-right: 10%;
+    padding: 15px;
     background-color: var(--neutral);
     display: none;
     border-radius: 5px;
 
 }
+
+/* .highscores {
+    margin-bottom: 30vh;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 15px;
+    background-color: var(--neutral);
+    display: none;
+    border-radius: 5px;
+} */
 
 .intro {
     display: block;
@@ -151,9 +164,13 @@ main {
     /* position: fixed; */
     gap: 10px;
     margin: 20px 0;
+    padding: 15px;
+
 }
 
 .abtn {
+    /* width: 60px;
+    height: 30px; */
     background-color: var(--abtn);
     border: 3px solid var(--);
     box-shadow: 0 0 5px black;
@@ -188,6 +205,7 @@ main {
 
 .highscores {
     display: none;
+    /* gap: 10px; */
 }
 
 ol {
@@ -205,10 +223,16 @@ li {
     list-style-position: inside;
 }
 
+/* .hiscores {
+    padding: 20px;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+} */
 
-#high-score {
+/* #high-score {
     text-align: left;
-}
+} */
 
 /* -------------------HIDE/Show FUNCTION------------------- */
 .hide {
@@ -235,3 +259,7 @@ li {
     text-align: center;
     padding-top: 5px;
 }
+
+/* .backclear {
+    margin-top: 10px;
+} */

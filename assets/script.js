@@ -13,7 +13,9 @@ var wrongEl = document.getElementById('wrong')
 //buttons
 var buttonStart = document.getElementById('start-button')
 var buttonGoBack = document.getElementById('back-button')
+var buttonGoBck = document.getElementById('bck-bttn')
 var buttonClear = document.getElementById('clear-high-scores')
+var buttonClr = document.getElementById('clr-hs')
 //questions/answers element
 var questionsEL = document.getElementById('question')
 var answerButtonsEl = document.getElementById("answer-buttons")
@@ -31,9 +33,11 @@ formInitials.addEventListener("submit", createHighScore)
 ViewHighScoreEl.addEventListener("click", displayHighScores)
 //Go back button
 buttonGoBack.addEventListener("click", renderStartPage)
+buttonGoBck.addEventListener("click", renderStartPage)
 //clear scores button
 buttonClear.addEventListener("click", clearScores)
 
+buttonClr.addEventListener("click", clearScores)
 
 //High Score Array
 var HighScores = [];
